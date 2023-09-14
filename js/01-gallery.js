@@ -3,14 +3,13 @@ import SimpleLightbox from "simplelightbox";
 // Import suplimentar de stil
 import "simplelightbox/dist/simple-lightbox.min.css";
 // Add imports above this line
-import { galleryItems } from './gallery-items';
-// Change code below this line
+import { galleryItems } from "./gallery-items";
 
 const galleryElem = document.querySelector("ul.gallery");
 
-let listitems= "";
+let listitems = "";
 
-galleryItems.forEach(item => {
+galleryItems.forEach((item) => {
   const img = `<li class="gallery__item">
   <a class="gallery__link" href="${item.original}">
      <img class="gallery__image" src="${item.preview}" alt="${item.description}" />
@@ -21,8 +20,7 @@ galleryItems.forEach(item => {
 
 galleryElem.insertAdjacentHTML("afterbegin", listitems);
 
-
-const lightbox = new SimpleLightbox('.gallery a', { 
-    captionsData: "alt",
-    captionDelay: 250,
-})
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
